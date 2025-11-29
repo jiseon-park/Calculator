@@ -65,4 +65,20 @@ elif operation == '모듈러 연산 (%)':
 
 elif operation == '지수 연산 (x^y)':
     result = num1 ** num2
-    st.write(f"**{num1} ^ {num2} = {result}
+    # ✨ 수정된 부분: 닫는 따옴표를 추가했습니다.
+    st.write(f"**{num1} ^ {num2} = {result}**") 
+
+elif operation == '로그 연산 (log_y(x))':
+    if num1 > 0 and num2 > 0 and num2 != 1:
+        try:
+            # log_y(x) 계산 (밑이 y인 x의 로그)
+            result = math.log(num1, num2)
+            st.write(f"**log base {num2} of {num1} = {result}**")
+        except Exception as e:
+            st.error(f"로그 연산 중 오류 발생: {e}")
+    else:
+        st.error("오류: 로그의 진수(x)는 양수여야 하며, 밑(y)은 양수이고 1이 아니어야 합니다.")
+
+# --- 코드 설명 ---
+st.markdown("---")
+st.caption("이 앱은 Streamlit을 사용하여 만들어졌습니다.")
